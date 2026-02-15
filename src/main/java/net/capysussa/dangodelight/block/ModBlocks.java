@@ -21,15 +21,15 @@ public class ModBlocks {
     DeferredRegister.create(ForgeRegistries.BLOCKS, DangoDelight.MOD_ID);
 
     public static final RegistryObject<Block> RED_RICE_DUMPLING_BLOCK = registerBlock("red_rice_dumpling_block",
-        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.MUD))
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.PACKED_MUD))
     );
 
     public static final RegistryObject<Block> WHITE_RICE_DUMPLING_BLOCK = registerBlock("white_rice_dumpling_block",
-        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.MUD))
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.PACKED_MUD))
     );
 
     public static final RegistryObject<Block> LIGHT_GRAY_RICE_DUMPLING_BLOCK = registerBlock("light_gray_rice_dumpling_block",
-        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.MUD))
+        () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.PACKED_MUD))
     );
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

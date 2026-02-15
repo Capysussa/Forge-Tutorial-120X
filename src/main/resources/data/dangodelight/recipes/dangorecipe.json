@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "category": "misc",
+    "ingredients": [
+        {
+            "item": "dangodelight:white_rice_dumpling",
+            "count": 3
+        },
+        {
+            "item": "minecraft:stick",
+            "count": 1
+        }
+    ],
+    "result": {
+        "item": "dangodelight:dango",
+        "count": 1
+    }
+}
