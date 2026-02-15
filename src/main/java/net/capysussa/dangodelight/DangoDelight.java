@@ -1,6 +1,10 @@
 package net.capysussa.dangodelight;
 
 import com.mojang.logging.LogUtils;
+
+import net.capysussa.dangodelight.block.ModBlocks;
+import net.capysussa.dangodelight.item.ModCreativeModTabs;
+import net.capysussa.dangodelight.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -39,6 +43,10 @@ public class DangoDelight {
     public DangoDelight(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+        ModItems.Register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -55,7 +63,10 @@ public class DangoDelight {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.RED_RICE_DUMPLING);
+            event.accept(ModItems.DANGO);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
