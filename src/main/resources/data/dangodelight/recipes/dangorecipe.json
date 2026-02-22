@@ -3,12 +3,10 @@
     "category": "misc",
     "ingredients": [
         {
-            "item": "dangodelight:white_rice_dumpling",
-            "count": 3
+            "tag": "dangodelight:rice_dumplings"
         },
         {
-            "item": "minecraft:stick",
-            "count": 1
+            "item": "minecraft:stick"
         }
     ],
     "result": {

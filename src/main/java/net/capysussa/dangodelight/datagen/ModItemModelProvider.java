@@ -1,0 +1,32 @@
+package net.capysussa.dangodelight.datagen;
+
+import net.capysussa.dangodelight.DangoDelight;
+import net.capysussa.dangodelight.item.ModItems;
+import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
+import net.minecraftforge.client.model.generators.ItemModelProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
+
+public class ModItemModelProvider extends ItemModelProvider {
+
+    public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+        super(output, DangoDelight.MOD_ID, existingFileHelper);
+    }
+
+    @Override
+    protected void registerModels() {
+        simpleItem(ModItems.DANGO);
+        simpleItem(ModItems.WHITE_RICE_DUMPLING);
+        simpleItem(ModItems.LIGHT_GRAY_RICE_DUMPLING);
+        simpleItem(ModItems.RED_RICE_DUMPLING);
+    }
+
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(DangoDelight.MOD_ID,"item/" + item.getId().getPath()));
+    }
+}
